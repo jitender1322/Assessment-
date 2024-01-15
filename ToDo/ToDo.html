@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .todo {
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 10px;
+            width: 30%;
+            margin: 30px auto;
+            padding: 30px 10px;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
+        input {
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.664);
+            border-radius: 4px;
+            background-color: transparent;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px;
+        }
+
+        button {
+            background-color: gold;
+            padding: 10px 20px;
+            margin: 0px 0 10px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            font-weight: 900;
+        }
+
+        #list {
+            text-align: start;
+            font-size: 18px;
+        }
+
+        #list p {
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo">
+        <h1>Create Your ToDo List...</h1>
+        <input type="text" id="add"><br>
+        <button onclick="task()">Add</button>
+        <div id="list">
+        </div>
+    </div>
+
+    <script>
+        function task() {
+            let value = document.getElementById('add').value;
+            let node = document.createElement('p');
+            let text = document.createTextNode(value);
+            node.appendChild(text);
+            document.getElementById('list').appendChild(node);
+        }
+    </script>
+</body>
+
+</html>
